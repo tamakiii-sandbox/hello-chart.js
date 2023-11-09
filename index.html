@@ -1,0 +1,126 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>chart.js</title>
+    <script src="/node_modules/chart.js/dist/chart.min.js"></script>
+</head>
+
+<body>
+    <main style="max-width: 700px; margin: 0 auto; position: relative;">
+        <div style="width: 100%; overflow-x: scroll; width: calc(100% - 40px); height: 300px;">
+            <canvas id="myChart"></canvas>
+        </div>
+    </main>
+
+    <script>
+        const canvas = document.getElementById('myChart');
+        const ctx = canvas.getContext('2d');
+        const chart = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: [
+                    'Red',
+                    'Blue',
+                    'Yellow',
+                    'Green',
+                    'Purple',
+                    'Orange',
+                    'Red',
+                    'Blue',
+                    'Yellow',
+                    'Green',
+                    'Purple',
+                    'Orange'
+                ],
+                datasets: [{
+                        label: '# of Votes',
+                        data: [
+                            12,
+                            19,
+                            3,
+                            5,
+                            2,
+                            3,
+                            12,
+                            19,
+                            3,
+                            5,
+                            2,
+                            3
+                        ],
+                        backgroundColor: [
+                            'rgba(255, 99, 132, 0.2)',
+                            'rgba(54, 162, 235, 0.2)',
+                            'rgba(255, 206, 86, 0.2)',
+                            'rgba(75, 192, 192, 0.2)',
+                            'rgba(153, 102, 255, 0.2)',
+                            'rgba(255, 159, 64, 0.2)',
+                            'rgba(255, 99, 132, 0.2)',
+                            'rgba(54, 162, 235, 0.2)',
+                            'rgba(255, 206, 86, 0.2)',
+                            'rgba(75, 192, 192, 0.2)',
+                            'rgba(153, 102, 255, 0.2)',
+                            'rgba(255, 159, 64, 0.2)'
+                        ],
+                        borderColor: [
+                            'rgba(255, 99, 132, 1)',
+                            'rgba(54, 162, 235, 1)',
+                            'rgba(255, 206, 86, 1)',
+                            'rgba(75, 192, 192, 1)',
+                            'rgba(153, 102, 255, 1)',
+                            'rgba(255, 159, 64, 1)',
+                            'rgba(255, 99, 132, 1)',
+                            'rgba(54, 162, 235, 1)',
+                            'rgba(255, 206, 86, 1)',
+                            'rgba(75, 192, 192, 1)',
+                            'rgba(153, 102, 255, 1)',
+                            'rgba(255, 159, 64, 1)'
+                        ],
+                        borderWidth: 1
+                    },
+                    {
+                        "label": "Progress",
+                        "data": [
+                            1,
+                            2,
+                            3,
+                            4.75,
+                            5,
+                            6,
+                            1,
+                            2,
+                            3,
+                            4.75,
+                            5,
+                            6
+                        ],
+                        "backgroundColor": "rgba(0, 0, 0, 0)",
+                        "borderColor": "#34D399",
+                        "order": 1,
+                        "pointStyle": "circle",
+                        "borderWidth": 2,
+                        "pointBorderColor": "rgba(0, 0, 0, 0)",
+                        "pointBackgroundColor": "#34D399",
+                        "type": "line",
+                        "tension": 0
+                    }
+                ]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+        // canvas.style.width = '700px';
+        // canvas.style.height = '300px';
+    </script>
+</body>
+
+</html>
